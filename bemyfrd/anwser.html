@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="fontss2/iconfont.css" rel="external nofollow" />
+  <style>
+   .orginal {
+    font-size: 13px;
+    color: deepskyblue;
+   }
+   .wrong {
+    font-size: 13px;
+    color: red;  
+   }
+   .right {
+    font-size: 13px;
+    color: green;
+   }
+  </style>
+ </head>
+ <body>
+  <p>
+   <input type="text"><span class="orginal icon-wenhao iconfont">请输入答案~</span>
+  </p>
+  <script>
+   //获取元素对象
+   var input = document.querySelector('input');
+   var span = document.querySelector('span');
+
+   // 注册事件 失去焦点事件
+   input.onblur = function() {
+    if (input.value.length > 0 && input.value.length < 1 || input.value.length > 5) {
+     span.className = 'iconfont icon-cuowuguanbiquxiao-xianxingyuankuang wrong';
+     span.innerHTML= '答案的位数不对哦！';
+    }else if(input.value >=24 && input.value <=24) {
+     span.className = 'iconfont  icon-yiyanzheng  right';
+     span.innerHTML = '好棒~输入对了！';
+	 window.location.href="http://pillowppd.github.io/bemyfrd/success.html" ;
+    }else {
+     span.className = 'orginal icon-wenhao iconfont';
+     span.innerHTML = '啊嘞嘞~答案不对哦~';
+    }
+   }
+  </script>
+ </body>
+</html>
